@@ -9,7 +9,8 @@ calendar: ${SRC}
 .PHONY: install
 
 install:
-	install -D -o root -g root -m 444 \
+	install -d -o root -g root -m 544 ${DESTDIR}/usr/share/calendar
+	install -o root -g root -m 444 \
 		./calendars/calendar.* ${DESTDIR}/usr/share/calendar
 	for lang in ${INTER}; do \
 		install -d -o root -g root ${DESTDIR}/usr/share/calendar/$${lang}; \
